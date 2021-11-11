@@ -14,19 +14,7 @@
 *
 * -----------------------------------------------------------------------------
 * 
-*  DELIVERY
-*      1. Zip the solution like you would for an assessment submission, 
-*        taking care to delete cache folders like Debug and x86
-*      2. Email to lecturer by the date given in the notes/class.
-*
-*
-******************************************************************************/
-
-//NOTES - Draw the U banana: drawCharacter(10, 2, 'U', layerColours(FG_YELLOW, BG_BLACK));
-//Describe banana in GUI : drawCharacter(10, 2, 'U', layerColours(FG_YELLOW, BG_BLACK)); DONE
-//TODO 1. Fix Menu Screen add more functionality 2. fix GUI screen - add scores, fruit types, difficulty 3. Add more fruit
-//TODO 4. add instructions "maybe in a screen of its own?" 5. get a score that increases from eating fruit
-//TODO 6. Add extra classes if possible 7. add playmodes byt passing arguments to playSnake, maybe from an options screen? 8. Clean all comments
+*  
 
 #include <iostream>
 #include <string>
@@ -233,10 +221,7 @@ int playSnake()
         playerHasQuit = true;
     }
 
-    //create collision when snake eats the fruit
-    //if slithers.location == fruit.location?
-    //if theres a collision add 1 to the score
-    //move the fruit to a new location
+    
     if (slithers.location == apple.location)
     {
         apple.fruitGotAte = true;
@@ -261,14 +246,6 @@ int playSnake()
   return score; // Return placeholder score for now
 }
 
-//int snakeEatsFruit(Snake snake, Fruit fruit)
-//{
-//    if (snake.location == fruit.location)
-//    {
-//        cout << "you hit fruit " << "";
-//    }
-//}
-
 // Returns the player's choice using a constant from enum Screen.
 int displayMenuScreen()
 {
@@ -284,11 +261,7 @@ int displayMenuScreen()
     drawString(13, 16, "(X) EXIT", layerColours(FG_RED, BG_BLACK));
     
 
-    // WARNING: displayMenuScreen will end in milliseconds or less, and the user
-    // will still have the key down. Whatever screen shows after this should avoid
-    // using P or X keys as input or they'll instantly trigger.. unless you can think
-    // of a fix?
-    if (keyIsDown('P'))
+     if (keyIsDown('P'))
     {
       choice = Screen::PLAY;
     }
