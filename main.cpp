@@ -158,8 +158,6 @@ int playSnake()
   slithers.location.y = 5;
   slithers.xDir = Direction::NONE;
   slithers.yDir = Direction::DOWN;
-  //fruit for the snake to eat and grow
-  //TODO - needs to add to points
   Fruit apple;
   apple.colour = textpixels::GREEN;
   apple.menuLocation = Point2d(9, windowHeight() - 2);
@@ -177,13 +175,12 @@ int playSnake()
   
   do
   {
-    textpixels::startFrame();   // Let textpixels know we're doing stuff in this frame.
-
+    textpixels::startFrame();   
     /* ---------------------------------------------------------------------- INPUT */
     if (keyIsDown('Q'))
     {
       playerHasQuit = true;
-      break;  // End the DO loop now, go to the line after it ends (return score?)
+      break;  
     }
     // Check if a, d, left/right arrow is pressed, store it 
     Direction xDirectionInput = textpixels::getLeftRightInput();
@@ -193,7 +190,6 @@ int playSnake()
     /* ---------------------------------------------------------------- PROCESSING */
     if (xDirectionInput != Direction::NONE)
     {
-      // Change our snake direction to match the direction that was entered
         slithers.xDir = xDirectionInput;
         slithers.yDir = Direction::NONE;
     }
@@ -243,7 +239,7 @@ int playSnake()
     textpixels::endFrame();     
   } while (!playerHasQuit); 
 
-  return score; // Return placeholder score for now
+  return score; // 
 }
 
 // Returns the player's choice using a constant from enum Screen.
